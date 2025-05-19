@@ -2,7 +2,7 @@ html,
 body {
 	padding: 0;
 	margin: 0;
-	background: transparent;
+	background: #D4E7C5;
 }
 
 /* Use OS default fonts */
@@ -19,23 +19,60 @@ body {
 		'Segoe UI Emoji';
 	text-rendering: optimizeLegibility;
 	font-feature-settings: 'liga', 'clig', 'kern';
+	margin: 20px;
 }
 
 header {
-	position: absolute;
-	width: 500px;
-	height: 250px;
-	top: 50%;
-	left: 50%;
-	margin-top: -125px;
-	margin-left: -250px;
+	background: #99BC85;
+	border-radius: 20px;
 	text-align: center;
+	padding: 10px;
 }
-
+div{
+	margin: 5px;
+}
 header h1 {
 	font-size: 60px;
 	font-weight: 200;
 	margin: 0;
 	padding: 0;
 	opacity: 0.7;
+}
+h2{
+	text-shadow: 2px 2px 0px #99BC85;
+}
+table{
+	margin: auto;
+	
+}
+
+td, th{
+	background-color: #BFD8AF;
+	border: 1px solid #000;
+	border-radius: 5px;
+	padding: 20px;
+	border-spacing: 500px;
+}
+th{
+	background-color: #99BC85;
+	color: black;
+}
+
+#pageFaults1{
+	text-align: center;
+}
+#showPF{
+	text-align: center;
+}
+#pagesInput, #framesInput{
+	background-color: #E1F0DA;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-radius: 5px;
+}
+button{
+	border-radius: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: #E1F0DA;
 }
