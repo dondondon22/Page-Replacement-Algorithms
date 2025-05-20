@@ -1,14 +1,14 @@
 {
-	"name": "app-name",
-	"productName": "App Name",
-	"version": "0.0.0",
-	"description": "The best app ever",
+	"name": "page-replacement",
+	"productName": "OS Page replacement Algorithm",
+	"version": "1.0.0",
+	"description": "OS Case Study - Page Replacement Algorithm",
 	"license": "MIT",
 	"repository": "sindresorhus/electron-boilerplate",
 	"author": {
-		"name": "Your Name",
-		"email": "user@gmail.com",
-		"url": "https://sindresorhus.com"
+		"name": "Donson Mcklein Directo",
+		"email": "don.directo22@gmail.com",
+		"url": "n/a"
 	},
 	"scripts": {
 		"postinstall": "electron-builder install-app-deps",
@@ -47,7 +47,7 @@
 		"releaseDraft": false
 	},
 	"build": {
-		"appId": "com.company.AppName",
+		"appId": "com.company.OSCS",
 		"mac": {
 			"category": "public.app-category.social-networking",
 			"darkModeSupport": true

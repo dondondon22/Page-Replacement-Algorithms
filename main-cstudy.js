@@ -100,20 +100,6 @@ console.log('FIFO Memory States:', PagingAlgorithms.fifoAlgo(pages, frameSize));
 console.log('LRU Memory States:', PagingAlgorithms.lruAlgo(pages, frameSize));
 console.log('Optimal Memory States:', PagingAlgorithms.optimalAlgo(pages, frameSize));
 
-
-//TO Do
-/*
-1) Indexing replacement, shifting the array to the left and adding the new page at the end. needs fixing
-instead replace and not shift to the left
-2) Add function to generate random pages from 0 to 9 only
-3) Pass the number of page frames to the program at startup
-4) Create a button to generate random pages 0 to 9, 30 max
-5) Create a button to calculate the page replacement algorithms
-6) Create a box to input the pages, 0-9 number only, 30 max
-7) Create a box to input the number of frames, 1-10 number only
-*/
-
-
 window.onload = function() {
     function getPagesInput() {
         const val = document.getElementById('pagesInput').value;
@@ -132,6 +118,12 @@ window.onload = function() {
         setPagesInput(pages);
     };
 
+    const algoDisplayNames = {
+    'FIFO': 'First In, First Out (FIFO)',
+    'LRU': 'Least Recently Used (LRU)',
+    'Optimal': 'Optimal Page Replacement (OPT)'
+    };
+
     document.getElementById('runAlgosBtn').onclick = function() {
         const pages = getPagesInput();
         const frameSize = getFramesInput();
@@ -143,7 +135,7 @@ window.onload = function() {
         let currentAlgo = 'FIFO';
 
         function renderStep(algoName, algoResult) {
-            let h = `<h2>${algoName}</h2>`;
+            let h = `<h2>${algoDisplayNames[algoName]}</h2>`;
             h += `<div style="margin-bottom:1em;">Step ${currentStep + 1} of ${algoResult.memoryStates.length} (Page: <b>${pages[currentStep]}</b>)</div>`;
             h += `<table style="text-align:center;"><tr><th>Frame</th>`;
             for (let s = 0; s <= currentStep; s++) {
@@ -259,5 +251,5 @@ window.onload = function() {
     };
 
     // Optionally, run once on load:
-    document.getElementById('runAlgosBtn').click();
+    //document.getElementById('runAlgosBtn').click();
 };
