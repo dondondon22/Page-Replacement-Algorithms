@@ -14,7 +14,7 @@ Windows 7+ are supported (64-bit only).*
 
 **Windows**
 
-[**Download**]([https://github.com/user/repo/releases/latest](https://github.com/dondondon22/Page-Replacement-Algorithms/releases/tag/v1.0.0)) the `.exe` file.
+[**Download**](https://github.com/dondondon22/Page-Replacement-Algorithms/releases/tag/v1.0.0) the `.exe` file.
 
 ---
 
