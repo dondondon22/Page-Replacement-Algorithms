@@ -73,6 +73,10 @@
 				"deb"
 			],
 			"category": "Network;Chat"
+		},
+		"win": {
+			"target":"nsis"
+		
 		}
 	}
 }
