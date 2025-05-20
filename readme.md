@@ -10,21 +10,11 @@ It provides the calculation of Page Faults from the Reference String Pages and n
 
 ## Install
 
-*macOS 10.13+, Linux, and Windows 7+ are supported (64-bit only).*
-
-**macOS**
-
-[**Download**](https://github.com/user/repo/releases/latest) the `.dmg` file.
-
-**Linux**
-
-[**Download**](https://github.com/user/repo/releases/latest) the `.AppImage` or `.deb` file.
-
-*The AppImage needs to be [made executable](http://discourse.appimage.org/t/how-to-make-an-appimage-executable/80) after download.*
+Windows 7+ are supported (64-bit only).*
 
 **Windows**
 
-[**Download**](https://github.com/user/repo/releases/latest) the `.exe` file.
+[**Download**]([https://github.com/user/repo/releases/latest](https://github.com/dondondon22/Page-Replacement-Algorithms/releases/tag/v1.0.0)) the `.exe` file.
 
 ---
 
