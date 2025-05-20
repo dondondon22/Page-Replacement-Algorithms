@@ -9,7 +9,7 @@ class PagingAlgorithms {
         pages.forEach(page => {
             if (!frames.includes(page)) {
                 if (frames.length === frameSize) {
-                    // Replace the page at fifoPointer instead of shifting
+                    // Replace the page at the pointer
                     frames[fifoPointer] = page;
                     fifoPointer = (fifoPointer + 1) % frameSize;
                 } else {
@@ -17,17 +17,17 @@ class PagingAlgorithms {
                 }
                 pageFaults++;
             }
-            // Store a copy of the current state of frames
+            // store current state
             memoryStates.push([...frames]);
         });
 
-        return {memoryStates, pageFaults}; // Return all memory states
+        return {memoryStates, pageFaults};
     }
 
     static optimalAlgo(pages, frameSize) {
         let frames = [];
         let pageFaults = 0;
-        let memoryStates = []; // Array to store memory states
+        let memoryStates = []; 
 
         pages.forEach((page, index) => {
             if (!frames.includes(page)) {
@@ -45,18 +45,18 @@ class PagingAlgorithms {
                 pageFaults++;
             }
 
-            // Store a copy of the current state of frames
+      
             memoryStates.push([...frames]);
         });
 
-        return {memoryStates, pageFaults}; // Return all memory states
+        return {memoryStates, pageFaults};
     }
 
     static lruAlgo(pages, frameSize) {
         let frames = [];
         let pageFaults = 0;
         let recentUsage = new Map();
-        let memoryStates = []; // Array to store memory states
+        let memoryStates = []; 
     
         pages.forEach((page, index) => {
             if (!frames.includes(page)) {
@@ -64,7 +64,7 @@ class PagingAlgorithms {
                     // Find the least recently used page's index
                     let lruPage = [...recentUsage.entries()].sort((a, b) => a[1] - b[1])[0][0];
                     let lruIndex = frames.indexOf(lruPage);
-                    // Replace the LRU page at its index instead of shifting
+                    // Replace lru page
                     frames[lruIndex] = page;
                     recentUsage.delete(lruPage);
                 } else {
@@ -74,11 +74,11 @@ class PagingAlgorithms {
             }
             recentUsage.set(page, index);
     
-            // Store a copy of the current state of frames
+            
             memoryStates.push([...frames]);
         });
     
-        return {memoryStates, pageFaults}; // Return all memory states
+        return {memoryStates, pageFaults}; 
     }
 }
 
@@ -91,7 +91,7 @@ function generateRandomPages(length = 30) {
     return pages;
 }
 
-// Example Usage
+//Example ng reference sting
 const pages = [7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2];
 const frameSize = 3;
 //try on terminal
@@ -138,7 +138,6 @@ window.onload = function() {
             h += `<div style="margin-bottom:1em;">Step ${currentStep + 1} of ${algoResult.memoryStates.length} (Page: <b>${pages[currentStep]}</b>)</div>`;
             h += `<table style="text-align:center;"><tr><th>Frame</th>`;
             for (let s = 0; s <= currentStep; s++) {
-               // h += `<th>Step ${s + 1}<br>Page ${pages[s]}</th>`;
                  h += `<th> ${pages[s]}</th>`;
             }
             h += `</tr>`;
@@ -150,7 +149,7 @@ window.onload = function() {
                 h += `</tr>`;
             }
             h += `</table>`;
-            // Calculate page faults so far
+            // calculate the page fault
             let faultsSoFar = algoResult.memoryStates.slice(0, currentStep + 1).reduce((acc, state, idx) => {
                 if (idx === 0) return 1;
                 return acc + (algoResult.memoryStates[idx - 1].includes(pages[idx]) ? 0 : 1);
@@ -230,8 +229,6 @@ window.onload = function() {
             html += renderResult('First In, First Out (FIFO)', fifo);
             html += renderResult('Least Recently Used (LRU)', lru);
             html += renderResult('Optimal Page Replacement (OPT)', optimal);
-
-            // Add a brief summary of all page faults per algorithm
             html += `
                 <div style="margin-top:2em; padding:1em; background:#e6f2ff; border-radius:8px;">
                     <h3>Page Faults Summary</h3>
@@ -245,7 +242,7 @@ window.onload = function() {
             document.getElementById('results').innerHTML = html;
         }
 
-        // Start with FIFO animation
+        // Start with FIFO
         renderStep(currentAlgo, fifo);
     };
 
