@@ -1,11 +1,10 @@
-// Paging Algorithms
 class PagingAlgorithms {
     
     static fifoAlgo(pages, frameSize) {
         let frames = [];
         let pageFaults = 0;
-        let memoryStates = []; // Array to store memory states
-        let fifoPointer = 0; // Points to the next frame to replace
+        let memoryStates = []; 
+        let fifoPointer = 0; 
 
         pages.forEach(page => {
             if (!frames.includes(page)) {
@@ -95,7 +94,7 @@ function generateRandomPages(length = 30) {
 // Example Usage
 const pages = [7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2];
 const frameSize = 3;
-
+//try on terminal
 console.log('FIFO Memory States:', PagingAlgorithms.fifoAlgo(pages, frameSize));
 console.log('LRU Memory States:', PagingAlgorithms.lruAlgo(pages, frameSize));
 console.log('Optimal Memory States:', PagingAlgorithms.optimalAlgo(pages, frameSize));
@@ -250,6 +249,4 @@ window.onload = function() {
         renderStep(currentAlgo, fifo);
     };
 
-    // Optionally, run once on load:
-    //document.getElementById('runAlgosBtn').click();
 };
